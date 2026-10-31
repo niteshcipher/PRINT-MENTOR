@@ -1,175 +1,151 @@
-# Pixel Mentor 🎮🪙🧙
+# PIXELMENTOR 🎮🪙🧙
+### Cyberpunk Financial Engine & Autonomous AI Mentor for First-Time Earners in India
 
-A pixel-art financial literacy game and AI coach built for first-time earners in India (students, first-job professionals, and gig workers).
-**EDUCATION ONLY**: Never regulated financial advice. All projections are illustrative simulations.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688.svg?logo=fastapi)](https://fastapi.tiangolo.com)
+[![React](https://img.shields.io/badge/React-18.3-61DAFB.svg?logo=react)](https://react.dev)
+[![Vite](https://img.shields.io/badge/Vite-5.4-646CFF.svg?logo=vite)](https://vitejs.dev)
+[![Pytest](https://img.shields.io/badge/Tests-31%20Passed-brightgreen.svg?logo=pytest)](https://pytest.org)
 
----
-
-## Architecture & Roadmap Progress
-
-### Phase A: Foundation (Complete)
-- **Part 1: Project Setup**: Vite + React + React Router + Axios + Zustand + Recharts (`/web`) & FastAPI + SQLAlchemy 2.0 + SQLite + pytest (`/api`). Root `.env.example`, `.gitignore`, CORS, Vite proxy, and health check (`/health` $\rightarrow$ `{"status": "ok"}`).
-- **Part 2: Database Schema (SQLite)**: All 8 tables implemented in `api/app/models.py`. Append-only `coin_ledger`. Database seeder (`api/seed.py`).
-- **Part 3: Anonymous Identity & Session Handling**: UUID generation in `src/lib/session.js`, Axios request interceptor attaching `X-User-Id` in `src/lib/api.js`, FastAPI dependency `get_current_user` rejecting missing headers with `400` and auto-provisioning new users on first sight.
-- **Part 4: Design System & Pixel Assets**: 6-colour palette, typography, reusable components (`PixelButton`, `PixelCard`, `DialogueBox`, `CoinCounter`, `Modal`, `ProgressBar`, `Tooltip`, and inline SVG `Mentor` in 4 moods: `idle`, `happy`, `worried`, `thinking`). Visual styleguide at `/styleguide`.
-
-### Phase B: Dashboard & Simulation Core (Complete)
-- **Part 5: Landing Page (`/`)**:
-  - Hero with animated Mentor, one-line promise, and "Get Started" CTA button.
-  - 3-step how-it-works strip.
-  - 9 USP cards.
-  - Demo preview mock UI strip.
-  - Education-only legal disclaimer footer.
-  - Fully responsive on mobile phone width with zero backend calls.
-- **Part 6: Onboarding & Personality Quiz (`/onboarding`)**:
-  - 5-step wizard with progress bar (Category $\rightarrow$ Cash flow $\rightarrow$ Fixed expenses $\rightarrow$ Goal target $\rightarrow$ 4 Risk-scenario questions).
-  - Mentor reacts to answers in real time with typewriter dialogue.
-  - Deterministic scoring function in `api/app/services/personality.py` assigning `Safe Saver`, `Impulsive Spender`, `FOMO Investor`, or `Balanced Planner`.
-  - Grants 100 bonus coins via append-only ledger on `POST /profile`.
-  - Route guard redirects completed profiles to `/dashboard`.
-- **Part 7: Dashboard Shell (`/dashboard/*`)**:
-  - Responsive shell: left sidebar on desktop, bottom navigation tab bar on mobile.
-  - Header with live coin counter (`GET /coins/balance`), user personality badge, and API health status.
-  - Floating Mentor dock.
-  - Reusable `LoadingState`, `EmptyState`, and `ErrorState` components.
-  - Nested routes for all 7 tabs: Overview, Budget, Goals, Coach, Games, Learn, Scam Shield.
-- **Part 8: Budget Engine (Python)**:
-  - `api/app/services/budget.py`: Computes default limits by category and rent share.
-  - Gig mode: Lean-month baseline, buffer allocation, and `safe_to_spend_today`.
-  - Endpoints: `GET /expenses`, `POST /expenses`, `DELETE /expenses/{id}`, `GET /budget/summary`.
-  - Unit tests covering fixed income, irregular income, and overspending.
-- **Part 9: Budget Tab (React)**:
-  - Quick-add expense form.
-  - Recharts Donut chart of category spending and budget-vs-actual bars.
-  - Gig-mode card showing daily safe-to-spend allowance.
-  - Coin rewards (+5 per log, max 5/day).
-  - Recent expenses list with individual delete action.
-  - Adding/deleting expenses updates charts inline without page reload.
-  - Mentor warning comment if any category goes over limit.
-- **Part 10: Simulation Engine (Python)**:
-  - Pure functions in `api/app/services/simulation.py`:
-    - `sip_future_value(monthly, annual_rate, years)`
-    - `lump_sum(principal, annual_rate, years)`
-    - `inflation_adjusted(nominal, annual_inflation, years)`
-    - `months_to_goal(target, monthly, annual_rate, lump_sum)`
-    - `generate_scenario(kind, months, seed)`
-  - Endpoints: `POST /sim/sip`, `POST /sim/whatif`, `POST /sim/scenario`.
-  - Hand-calculated tests verifying exact mathematical outputs.
-
-- **Part 11: Goals Tab and What If Time Machine (`/dashboard/goals`)**:
-  - Goal cards (Laptop, Bike, Emergency Fund, Custom) showing current vs target and percentage progress.
-  - Interactive What If Time Machine with debounced sliders (monthly SIP, tenure, expected return rate, inflation).
-  - Lifestyle sacrifice sliders (Skip 2 food deliveries/month, pack office lunch, switch to cheaper phone plan) instantly projecting extra monthly compounding.
-  - Recharts Area chart comparing nominal vs real wealth with goal reference line.
-  - Callout: "At this rate, you reach your goal by [Month, Year]!"
+> **EDUCATION-ONLY PLATFORM**: Pixel Mentor is built strictly for financial literacy. All projections are illustrative mathematical simulations, never regulated investment advice.
 
 ---
 
-### Phase C & D: AI Coach, Scam Shield, Games & Learn (Complete)
-- **Part 12: AI Coach Tab & Memory (`/dashboard/coach`)**:
-  - `POST /coach/chat`, `GET /coach/starter-questions`, and `GET /coach/history`.
-  - Contextual mentor intelligence customized to user profile, income, category, and past memory.
-  - Strict guardrails in `api/services/guardrails.py` blocking specific stock/crypto ticker purchase recommendations.
-  - Proactive starter questions reactive to user's real data (e.g. food spend % of income).
-  - Robust fallback intelligence ensuring mentor always responds instantly.
-- **Part 13: Scam Shield Tab & Red Flag Detector (`/dashboard/scam`)**:
-  - `POST /scam/analyze`: Regex-driven rule engine scoring 0-100 risk meter.
-  - Detects: guaranteed returns, urgency, secret VIP Telegram/WhatsApp groups, pump-and-dump penny stock manipulations, advance fee fraud, and pyramid/MLM schemes.
-  - Clear explanations, highlighted flags, and SEBI/RBI-regulated safe alternatives.
-  - Interactive analyzer UI with 4 preloaded 1-click test cases.
-- **Part 14: Arcade Games & Mistake Replays (`/dashboard/games`)**:
-  - Standardized arcade shell: rules briefing, "I Understand" agreement gate, entry fee deduction via append-only ledger, gameplay HUD, and post-game Mistake Replay comparing user decisions with optimal financial strategies.
-  - 5 interactive simulations:
-    1. *SIP Farm*: 10 seasons, monthly planting vs skipping, discipline compounding bonus.
-    2. *Crash Survivor*: Sudden -30% market drop; panic sell vs hold firm vs buy the dip.
-    3. *Scam Detective*: 8 tips to evaluate as legitimate or fraudulent red flags.
-    4. *Budget Bazaar*: 4 weekly life shocks (bike breakdown, destination wedding, root canal, festival flash sale); choices between Emergency Buffer, Cutting Wants, or Credit Card debt.
-    5. *Inflation Island*: 15-year simulation (2010 to 2025) comparing ₹1,00,000 cash under mattress vs broad equity index fund as real consumer prices soar.
-- **Part 15: Learn & ELI15 Tab (`/dashboard/learn`)**:
-  - 30 Indian financial literacy terms in `api/data/glossary.json` with Simple (ELI15), Real-Life Analogy, and Technical definitions with search and zero LLM cost.
-  - Bite-sized financial lessons with idempotent coin rewards via `POST /learn/complete`.
-### Phase D: Games, Coin Economy & Production Polish (Complete)
-- **Part 17: Coin Economy ([`coins.py`](file:///c:/Users/nites/Desktop/invest/api/app/services/coins.py))**:
-  - `EARN_RULES` and `SPEND_RULES` tables with daily caps and one-time flags.
-  - Endpoints: `GET /coins/balance`, `POST /coins/earn`, `POST /coins/spend`.
-  - Server-side validation against append-only `coin_ledger` preventing overspending, double-clicking reward exploitation, and daily cap breaches.
-  - Global Zustand coin store with live animated `CoinCounter` and ledger history modal.
-- **Part 18: Game Framework ([`GameShell.jsx`](file:///c:/Users/nites/Desktop/invest/web/src/components/games/GameShell.jsx))**:
-  - Standardized reusable shell: rules briefing, *"I understand"* verification gate, entry fee deduction, live play viewport, Mistake Replay, and comparison chart.
-  - `POST /games/start` creates `game_sessions` row with personality-scaled difficulty and seed.
-  - `POST /games/submit` validates session, scores decisions, awards win coins, and stores decision history.
-  - Includes a trivial test simulator proving the framework loop.
-- **Part 19: The 5 Arcade Simulations & Mistake Replays**:
-  - **19a SIP Farm**: 10 seasons / 24 months, consistency vs skipping, dollar-cost averaging harvest.
-  - **19b Crash Survivor**: -30% market drop; emotional discipline: panic sell vs hold firm vs buy the dip.
-  - **19c Scam Detective**: 8 incoming tips to evaluate as legitimate or fraudulent red flags.
-  - **19d Budget Bazaar**: 4 weekly life shocks; emergency buffer vs cutting wants vs high-interest credit card debt.
-  - **19e Inflation Island**: 15-year compounding simulation comparing idle cash vs equity index fund.
-  - Replay API `GET /games/{session_id}/replay`: returns user path vs optimal strategy curve with educational Mentor debrief.
-- **Part 20: Production Polish, Deployment & Demo**:
-  - **Demo Mode**: Instant access via `?demo=1` (e.g. `http://localhost:5173/?demo=1`) loading pre-seeded student profile with goals, expenses, and coins.
-  - **Startup Hook**: Auto-seeds demo data if SQLite database is empty.
-  - **Mobile Ready**: All 7 tabs fully responsive at 360px phone width.
-  - **Deployment Configs**: `vercel.json` for frontend and `render.yaml` for backend.
-  - **3-Minute Demo Script**: Detailed walkthrough path documented in [`docs/DEMO_SCRIPT.md`](file:///c:/Users/nites/Desktop/invest/docs/DEMO_SCRIPT.md).
+## 🌟 Overview
+
+**PIXELMENTOR** transforms personal finance for young adults in India (college students, early-career professionals, and gig workers) into an **immersive cyberpunk retro RPG game**. 
+
+Instead of dealing with confusing spreadsheets or intimidating banking interfaces, users navigate real-world financial dilemmas: weathering simulated market crashes, cultivating compounding farms, detecting financial fraud with forensic tools, analyzing real-time web-scraped market news, and consulting an autonomous AI coach with persistent memory.
 
 ---
 
-## How to Run
+## 🕹️ System Architecture & Workflow
 
-### 1. Start the FastAPI Backend
+```mermaid
+flowchart TD
+    A["1. Landing Page (/)<br/>Cyberpunk Hero, 9 Value Pillars & Live HUD Preview"] --> B["2. Onboarding Wizard (/onboarding)<br/>Income, Fixed Costs & 5 Scenario Questions"]
+    B --> C["3. Archetype Calibration & Bonus<br/>Safe Saver | FOMO Investor | Impulsive Spender | Balanced Planner<br/>+100 Coins Awarded"]
+    C --> D["4. Cyberpunk Dashboard Shell (/dashboard)<br/>Screen-Locked Layout & Vertical Capsule Pill Navigation"]
+    D --> E["Daily Core Loop"]
+    E --> F["Log Daily Expenses<br/>(+5 Coins, Safe-to-Spend Quota)"]
+    E --> G["Calibrate Goals in Time Machine<br/>(System Advisor Directive & Lifestyle Sliders)"]
+    E --> H["Play Multi-Stage Simulation Games<br/>(Crash Survivor, SIP Farm, Scam Detective)"]
+    E --> I["Consult AI Mentor with Memory<br/>(Personalized Chat & Clear Chat Option)"]
+    E --> J["Read Web-Scraped Daily Market Intel<br/>(Live Nifty/Sensex Ticker & Dispatches)"]
+    D --> K["5. 2.5D / 3D Retro Town Map (/dashboard/map)<br/>Explore Financial City Buildings as Real 3D Locations"]
+```
+
+---
+
+## 📑 Complete Tab-by-Tab Breakdown
+
+| Tab | Route | Primary Purpose & Feature Set |
+| :--- | :--- | :--- |
+| **Dashboard** | `/dashboard/overview` | **Mission Control & Live Hub**: Top metric HUDs (Income, Fixed Costs, Discretionary Pool, Savings Rate), Quick Expense Logger (+5 coins, daily cap 3), and the **Daily Investment Intel** box linked directly to the News desk. |
+| **Budget** | `/dashboard/budget` | **Cashflow & Quotas**: 50/30/20 category tracking, category overspend alerts, and **Gig Worker Irregular Income Buffer** with dynamic `Safe to Spend Today` daily allowances. |
+| **Goals** | `/dashboard/goals` | **Time Machine & System Advisor**: Interactive compounding sliders, lifestyle sacrifice toggles (food delivery/lunch cuts), and the **System Advisor Action Directive Box** that provides personality-calibrated advice with 1-click optimal pacing calibration. |
+| **AI Coach** | `/dashboard/coach` | **Autonomous AI Mentor**: Conversational dialogue with Indian gaming metaphors, memory summaries, contextual profile awareness, Dashboard Q&A walkthrough (+25 coins), and a **Clear Chat** memory purge button. |
+| **Games** | `/dashboard/games` | **Multi-Stage Simulation Arena**: 5 deep interactive scenarios: *Crash Survivor* (4-phase crisis timeline), *SIP Farm* (10-season compounding farm), *Scam Detective* (forensic cyber desk), *Budget Bazaar* (4-week cashflow survival), and *Inflation Island* (15-year time machine). Includes Mistake Replays and comparison curves. |
+| **Learn** | `/dashboard/learn` | **ELI15 Jargon Busters**: 30 Indian financial terms explained with retro gaming analogies, in-text tooltips across the platform, and bite-sized quizzes with coin rewards. |
+| **Scam Shield** | `/dashboard/scam` | **Zero-Trust Fraud Scanner**: Regex-powered rule engine analyzing suspicious messages for red flags (guaranteed returns, artificial urgency, fake SEBI licenses, VIP Telegram rooms). |
+| **News** | `/dashboard/news` | **Live Web-Scraped Market Desk**: Live index ticker (NIFTY 50, SENSEX, Gold, USD/INR, Repo Rate), real-time financial RSS aggregation, sentiment classifications (`BULLISH`, `CAUTIOUS`, `WATCH`, `NEUTRAL`), and category filters. |
+| **Town Map** | `/dashboard/map` | **2.5D / 3D Retro Game World**: Interactive city where buildings map to real modules. Features mobile touch D-pad, dynamic camera tracking, zoom controls, and proximity entrance cues. |
+| **Help** | `/dashboard/help` | **Design System & Styleguide**: Specification of the 6-colour cyberpunk palette, 4 mentor mood avatars, typography, and reusable UI components. Includes top `< Back` navigation. |
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend (`/web`)
+* **Framework**: React 18 + Vite 5 + React Router v6
+* **State Management**: Zustand (Global profile, coin economy, and real-time ledger updates)
+* **Data Visualization**: Recharts (Compounding curves, area charts, budget donuts)
+* **Icons & Styling**: Lucide React + Cyberpunk Glassmorphism CSS (`backdrop-filter`, scanlines, neon glows)
+
+### Backend (`/api`)
+* **Framework**: FastAPI (Python 3.10+) + Uvicorn
+* **Database & ORM**: SQLAlchemy 2.0 + SQLite (with PostgreSQL compatibility)
+* **Intelligence & Guardrails**: LLM integration with strict financial guardrails blocking individual stock/crypto ticker recommendations
+* **Scraping Engine**: Standard-library XML/HTTP parser for financial RSS feeds with cache layer
+* **Testing**: Automated Pytest suite with 31 unit and integration tests
+
+---
+
+## ⚙️ Environment Configuration (`.env`)
+
+Create a `.env` file in the project root based on [`.env.example`](file:///c:/Users/nites/Desktop/invest/.env.example):
+
+```env
+# LLM Configuration (Groq / Grok / Gemini / OpenAI compatible)
+LLM_API_KEY=your_api_key_here
+LLM_MODEL=qwen/qwen3.8-27b
+MOCK_LLM=false
+
+# Backend Configuration
+DATABASE_URL=sqlite:///./pixel_mentor.db
+PORT=8000
+HOST=0.0.0.0
+
+# Frontend Configuration
+VITE_API_URL=http://localhost:8000
+```
+
+### Key Reference:
+* `LLM_API_KEY`: API key for your AI provider.
+* `MOCK_LLM`: Set to `true` to run completely offline without external API dependencies.
+* `DATABASE_URL`: Relational database connection string.
+* `VITE_API_URL`: Points the frontend to the backend server.
+
+---
+
+## 🚀 Quickstart Guide
+
+### 1. Prerequisites
+* Python 3.10+
+* Node.js 18+ & npm
+
+### 2. Backend Setup
 ```bash
+# Install Python dependencies
+pip install -r api/requirements.txt
+
+# Start FastAPI server
 python -m uvicorn main:app --app-dir api --port 8000 --reload
 ```
-- API Health Check: `http://localhost:8000/health` $\rightarrow$ `{"status": "ok"}`
-- Interactive Swagger Docs: `http://localhost:8000/docs`
+* **API Health Check**: `http://localhost:8000/health` $\rightarrow$ `{"status": "ok"}`
+* **Interactive Swagger Docs**: `http://localhost:8000/docs`
 
-### 2. Start the React Frontend
+### 3. Frontend Setup
 ```bash
+# Navigate to web directory and install packages
 cd web
+npm install
+
+# Start Vite dev server
 npm run dev
 ```
-- Landing Page: `http://localhost:5173/`
-- Instant Demo Mode: `http://localhost:5173/?demo=1`
-- Onboarding Wizard: `http://localhost:5173/onboarding`
-- Dashboard: `http://localhost:5173/dashboard`
-- Styleguide: `http://localhost:5173/styleguide`
+* **Landing Page**: `http://localhost:5173/`
+* **Instant Demo Mode**: `http://localhost:5173/?demo=1` (pre-loads sample student profile and coins)
+* **Dashboard**: `http://localhost:5173/dashboard`
 
 ---
 
-## How to Test
+## 🧪 Testing & Verification
 
-### Automated Pytest Suite (31 Tests)
+### Automated Pytest Suite (31 Tests Passing)
+Run the complete backend test suite:
 ```bash
 python -m pytest api/tests -v -p no:anyio
 ```
-Verifies:
-1. Budget engine: fixed income, irregular gig mode, overspending alert.
-2. Models: user creation, expense linkage, append-only coin ledger math, all 8 models.
-3. Personality quiz: deterministic scoring algorithm.
-4. Anonymous session: 400 on missing header, auto-provisioning on first sight.
-5. Simulation engine: SIP future value, lump sum compounding, inflation adjustment, and goal solver against hand-calculated references.
-6. AI Coach: guardrail ticker sanitization, fallback coach generation, expense-reactive starter questions.
-7. Coin economy: daily caps on expense logging, one-time reward idempotency, overspending prevention.
-8. Scam Shield: character spans extraction, 5 scam samples high score, 2 neutral samples low risk.
-9. Arcade Games: 5 games listing + dummy test, entry fee deduction, difficulty scaling, mistake replay evaluation.
-10. Learn & Glossary: 30 terms verification, level switch definitions, 8 short lessons with mini-quizzes, idempotent coin rewards.
 
-### Direct Engine Tests
+### Production Build Verification
+Ensure the frontend builds cleanly without errors:
 ```bash
-python api/test_direct.py
+cd web
+npm run build
 ```
 
-### Production Frontend Build
-```bash
-cd web
-npm run build
-```
-```bash
-cd web
-npm run build
-```
-```bash
-cd web
-npm run build
-```
+---
+
+## 📄 License
+This project is licensed under the [MIT License](LICENSE).
