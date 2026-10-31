@@ -1,0 +1,183 @@
+[
+  {
+    "term": "SIP (Systematic Investment Plan)",
+    "simple_def": "Putting aside a fixed amount of money every month into an investment.",
+    "intermediate_def": "An automated discipline using rupee-cost averaging to buy mutual fund units regularly regardless of market ups and downs.",
+    "analogy": "Like subscribing to Netflix, but instead of streaming shows, you're slowly buying pieces of India's biggest companies."
+  },
+  {
+    "term": "Mutual Fund",
+    "simple_def": "A basket of many stocks or bonds managed by a professional.",
+    "intermediate_def": "An investment vehicle that pools money from many investors to purchase a diversified portfolio of securities overseen by a SEBI-registered fund manager.",
+    "analogy": "Instead of buying 50 individual groceries yourself, you buy a pre-packed curated meal kit with everything balanced."
+  },
+  {
+    "term": "Index Fund",
+    "simple_def": "A low-cost fund that simply copies a major market index like NIFTY 50.",
+    "intermediate_def": "A passively managed mutual fund that mirrors the composition and performance of a benchmark index with very low expense ratios.",
+    "analogy": "Betting on the entire cricket team to score runs rather than betting on only one batsman."
+  },
+  {
+    "term": "Emergency Fund",
+    "simple_def": "Money kept safely aside solely for unexpected crises like medical bills or job loss.",
+    "intermediate_def": "Liquid savings covering 3 to 6 months of mandatory living expenses kept in high-liquidity instruments like savings accounts or liquid funds.",
+    "analogy": "The spare tire in your car: you hope you never need it, but you never drive without it."
+  },
+  {
+    "term": "Inflation",
+    "simple_def": "Prices rising over time, making your money buy less year after year.",
+    "intermediate_def": "The sustained percentage increase in the general price level of goods and services over time, measured in India by CPI.",
+    "analogy": "A silent thief stealing 6% of the snacks out of your grocery bag every single year."
+  },
+  {
+    "term": "Compounding",
+    "simple_def": "Earning returns on your money, and then earning returns on those returns.",
+    "intermediate_def": "The exponential mathematical process where accumulated interest or capital gains generate additional earnings over extended periods.",
+    "analogy": "Rolling a small snowball down a long snowy mountain until it becomes an unstoppable boulder."
+  },
+  {
+    "term": "Fixed Deposit (FD)",
+    "simple_def": "Locking your money with a bank for a fixed duration to earn guaranteed interest.",
+    "intermediate_def": "A low-risk financial instrument provided by banks offering higher fixed interest than regular savings accounts, insured up to ₹5 lakh by DICGC.",
+    "analogy": "Renting out a room to a reliable tenant who promises a fixed rent every month on the dot."
+  },
+  {
+    "term": "Recurring Deposit (RD)",
+    "simple_def": "Depositing a fixed amount every month into a bank for guaranteed interest.",
+    "intermediate_def": "A disciplined monthly savings product with a bank offering fixed tenure and guaranteed returns.",
+    "analogy": "A digital piggy bank that rewards you with bonus pocket money for feeding it every month."
+  },
+  {
+    "term": "PPF (Public Provident Fund)",
+    "simple_def": "A government-backed 15-year savings scheme with tax-free returns.",
+    "intermediate_def": "A long-term sovereign statutory debt scheme eligible for EEE (exempt-exempt-exempt) tax treatment under Section 80C.",
+    "analogy": "A safe locked vault sponsored by the government that keeps your retirement gold untaxed."
+  },
+  {
+    "term": "NPS (National Pension System)",
+    "simple_def": "A government-regulated retirement scheme that mixes equity and debt.",
+    "intermediate_def": "A market-linked voluntary contribution pension system regulated by PFRDA with low fund management fees and additional tax deductions under 80CCD.",
+    "analogy": "Planting a mango tree today so you can sit in its cool shade and eat fruit when you are 60."
+  },
+  {
+    "term": "Sovereign Gold Bond (SGB)",
+    "simple_def": "Government securities denominated in grams of gold instead of physical metal.",
+    "intermediate_def": "RBI-issued government debt tracking the market price of 999 purity gold plus an annual 2.5% coupon, with capital gains tax exemption if held to maturity.",
+    "analogy": "Owning digital gold with zero locker rent and getting paid interest just for holding it."
+  },
+  {
+    "term": "ELSS (Equity Linked Savings Scheme)",
+    "simple_def": "Tax-saving mutual funds with a 3-year lock-in period.",
+    "intermediate_def": "Equity mutual funds qualifying for Section 80C tax deduction with the shortest lock-in period (3 years) among tax-saving avenues.",
+    "analogy": "A gym membership with a 3-year commitment that builds financial muscle while cutting your tax bill."
+  },
+  {
+    "term": "SEBI",
+    "simple_def": "The watchdog referee protecting investors in India's stock market.",
+    "intermediate_def": "The Securities and Exchange Board of India: the statutory regulator established to protect retail investors and regulate financial markets.",
+    "analogy": "The strict football referee who shows red cards and blows the whistle whenever players cheat."
+  },
+  {
+    "term": "Expense Ratio",
+    "simple_def": "The annual percentage fee a mutual fund charges to manage your money.",
+    "intermediate_def": "The operational cost ratio deducted daily from the fund’s Net Asset Value (NAV) covering management fees, administrative, and distribution costs.",
+    "analogy": "The small entry ticket fee the amusement park deducts from your wallet every year."
+  },
+  {
+    "term": "Diversification",
+    "simple_def": "Not putting all your eggs in one basket.",
+    "intermediate_def": "A risk management strategy that mixes a wide variety of uncorrelated investments within a portfolio to reduce unsystematic risk.",
+    "analogy": "Carrying an umbrella, sunscreen, and a jacket on a hill station trip so no weather ruins your day."
+  },
+  {
+    "term": "Rupee-Cost Averaging",
+    "simple_def": "Buying more shares when prices drop and fewer when prices rise automatically.",
+    "intermediate_def": "An investment strategy where an investor divides up the total amount to be invested across periodic purchases to reduce volatility impact.",
+    "analogy": "Buying mangoes every month: when they are cheap you get a big carton, when expensive you get a few."
+  },
+  {
+    "term": "Bull Market",
+    "simple_def": "A market condition where stock prices are rising and optimism is high.",
+    "intermediate_def": "A sustained upward trend in financial markets accompanied by strong investor confidence and economic expansion.",
+    "analogy": "A raging bull charging forward and thrusting its horns upward into the air."
+  },
+  {
+    "term": "Bear Market",
+    "simple_def": "A market condition where prices drop 20% or more from recent peaks.",
+    "intermediate_def": "A prolonged period of falling asset prices accompanied by widespread pessimism and panic selling.",
+    "analogy": "A sleeping or attacking bear swiping its sharp paws downward."
+  },
+  {
+    "term": "Liquidity",
+    "simple_def": "How quickly you can convert an asset into spendable cash without losing value.",
+    "intermediate_def": "The ease and speed with which a security can be bought or sold in the market without substantially impacting its asset price.",
+    "analogy": "Cash in your pocket flows like water; property is like concrete that takes months to set and move."
+  },
+  {
+    "term": "Debt Fund",
+    "simple_def": "Mutual funds that lend money to governments and corporations for interest.",
+    "intermediate_def": "Fixed income mutual funds that invest in treasury bills, government securities, commercial paper, and corporate bonds.",
+    "analogy": "Being the moneylender who collects steady interest rather than a partner sharing company profits."
+  },
+  {
+    "term": "Equity Fund",
+    "simple_def": "Mutual funds that buy shares of companies to participate in their growth.",
+    "intermediate_def": "Funds investing at least 65% of assets in company shares, offering higher long-term growth with higher short-term fluctuations.",
+    "analogy": "Owning a percentage of your local bakery: if it opens 10 branches, you get wealthy."
+  },
+  {
+    "term": "Capital Gains Tax",
+    "simple_def": "Tax paid to the government on the profit made when selling an investment.",
+    "intermediate_def": "Taxes levied on capital appreciation, split in India into Short-Term Capital Gains (STCG) and Long-Term Capital Gains (LTCG).",
+    "analogy": "Giving a slice of your birthday cake to the house owner before taking the rest home."
+  },
+  {
+    "term": "Dividend",
+    "simple_def": "A cash share of company profits paid directly to shareholders.",
+    "intermediate_def": "A distribution of a portion of a company's earnings decided by the board of directors to a class of its shareholders.",
+    "analogy": "A fruit tree dropping ripe fruit into your basket while keeping the tree alive and standing."
+  },
+  {
+    "term": "Ponzi / MLM Scheme",
+    "simple_def": "A scam that pays early members using money collected from newer recruits.",
+    "intermediate_def": "A fraudulent investment operation that generates pseudo-returns for older investors through revenue paid by new investors rather than genuine legitimate profit.",
+    "analogy": "Borrowing money from Ramesh to pay back Suresh, until you run out of people and vanish."
+  },
+  {
+    "term": "Finfluencer",
+    "simple_def": "Social media creators talking about money, stocks, and crypto.",
+    "intermediate_def": "Online influencers sharing financial opinions, sometimes unregistered and paid by dubious apps to promote high-risk or fraudulent schemes.",
+    "analogy": "A roadside megaphone seller claiming a magic tonic cures all diseases without a doctor's degree."
+  },
+  {
+    "term": "Credit Score (CIBIL)",
+    "simple_def": "A 3-digit score (300-900) showing banks how reliably you pay back debts.",
+    "intermediate_def": "A numeric summary of your credit history calculated from credit card and loan repayment track records.",
+    "analogy": "Your school report card, but for how responsibly you repay borrowed money."
+  },
+  {
+    "term": "Demat Account",
+    "simple_def": "An electronic digital account that holds your shares and bonds safely.",
+    "intermediate_def": "A dematerialized account operated through depositories (NSDL or CDSL) to hold securities electronically.",
+    "analogy": "A digital locker where your share certificates are stored safely without risk of paper loss."
+  },
+  {
+    "term": "KYC (Know Your Customer)",
+    "simple_def": "The mandatory identity verification process required by financial institutions.",
+    "intermediate_def": "A regulatory standard using PAN, Aadhaar, and bank verification to prevent money laundering and fraud.",
+    "analogy": "Showing your student ID card or passport before entering an exam hall."
+  },
+  {
+    "term": "Term Life Insurance",
+    "simple_def": "Pure insurance that pays your family a large lump sum if you pass away.",
+    "intermediate_def": "Low-cost high-coverage pure protection insurance without any investment return element.",
+    "analogy": "An umbrella you carry only for heavy rain; you don't expect the umbrella to pay you if the sky stays sunny."
+  },
+  {
+    "term": "P/E Ratio",
+    "simple_def": "How much investors are willing to pay for each ₹1 of company profit.",
+    "intermediate_def": "Price-to-Earnings valuation ratio calculated by dividing the current share price by earnings per share (EPS).",
+    "analogy": "Comparing how many months of rent you must pay up-front to buy a small chai stall."
+  }
+]
+

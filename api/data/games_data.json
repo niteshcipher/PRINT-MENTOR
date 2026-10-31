@@ -1,0 +1,221 @@
+{
+  "games": [
+    {
+      "id": "sip_farm",
+      "name": "SIP Farm",
+      "tagline": "Plant monthly seeds and harvest the power of compounding!",
+      "entry_cost": 15,
+      "reward_coins": 30,
+      "category": "investing",
+      "rules": [
+        "You have 10 rounds (representing 10 years).",
+        "Each round, choose your monthly SIP seed amount (₹1,000 to ₹10,000).",
+        "Weather events (good monsoon, drought, storm) represent market cycles.",
+        "Discipline bonus: Never skipping a seed round yields compounding multipliers!"
+      ],
+      "learning_goal": "Demonstrates rupee-cost averaging and how patience compounds modest savings into a large harvest."
+    },
+    {
+      "id": "crash_survivor",
+      "name": "Crash Survivor",
+      "tagline": "A sudden -30% market dip strikes! Can your emotions survive?",
+      "entry_cost": 20,
+      "reward_coins": 40,
+      "category": "risk_management",
+      "rules": [
+        "A sudden economic crash slashes market values by 30%.",
+        "Social media is screaming doom. You must choose: PANIC SELL, HOLD FIRM, or BUY THE DIP.",
+        "Over the next 4 turns, watch the recovery curve unfold.",
+        "Points are awarded for resisting panic and adhering to long-term horizon."
+      ],
+      "learning_goal": "Teaches the psychology of market crashes and the steep cost of panic selling."
+    },
+    {
+      "id": "scam_detective",
+      "name": "Scam Detective",
+      "tagline": "Inspect 8 suspicious tips and unmask the fraudsters!",
+      "entry_cost": 10,
+      "reward_coins": 35,
+      "category": "scam_shield",
+      "rules": [
+        "You are presented with 8 incoming WhatsApp/Telegram messages and tips.",
+        "Identify whether each tip is LEGITIMATE or a SCAM.",
+        "Spot red flags like 'guaranteed returns', 'exclusive VIP channels', or 'hurry last 5 spots'.",
+        "Score 7 or 8 correct to earn master detective badge!"
+      ],
+      "tips": [
+        {
+          "id": 1,
+          "text": "SEBI-registered index fund with 0.1% expense ratio tracking NIFTY 50 over 10-year horizon.",
+          "is_scam": false,
+          "explanation": "Transparent, low-cost index tracking with a registered entity and realistic long-term horizon."
+        },
+        {
+          "id": 2,
+          "text": "Join our secret WhatsApp VIP group! 100% guaranteed 25% weekly returns on secret crypto bot. Transfer ₹5000 to unlock.",
+          "is_scam": true,
+          "explanation": "Guaranteed weekly returns do not exist. Requests for upfront fees to private chat groups are textbook scams."
+        },
+        {
+          "id": 3,
+          "text": "Public Provident Fund (PPF) offering 7.1% tax-free annual returns backed by the Government of India with a 15-year tenure.",
+          "is_scam": false,
+          "explanation": "PPF is an official sovereign savings scheme regulated by the Ministry of Finance."
+        },
+        {
+          "id": 4,
+          "text": "URGENT: Hot penny stock insider tip! Tomorrow it will hit upper circuit 20%. Invest your entire salary today before 9:15 AM!",
+          "is_scam": true,
+          "explanation": "Urgency, pump-and-dump penny stock touting, and claims of insider information are illegal manipulations."
+        },
+        {
+          "id": 5,
+          "text": "Deposit ₹10,000 in our Global Forex Fund, earn ₹1,000 every day, plus ₹2,000 bonus for every friend you recruit!",
+          "is_scam": true,
+          "explanation": "Recruitment bonuses linked to unsustainable daily returns characterize a classic Ponzi / pyramid scheme."
+        },
+        {
+          "id": 6,
+          "text": "Diversified Flexi-cap Mutual Fund investing across large, mid, and small cap equities managed by an AMC.",
+          "is_scam": false,
+          "explanation": "Standard SEBI-regulated diversified equity fund with clear mandate and regulatory oversight."
+        },
+        {
+          "id": 7,
+          "text": "Finfluencer DM: 'Hey buddy, I saw your profile. Send me ₹25,000 and my automated algo will double it in 48 hours with zero risk.'",
+          "is_scam": true,
+          "explanation": "No algorithm can double money in 48 hours without risk. Impersonation and unsolicited DMs are fraud."
+        },
+        {
+          "id": 8,
+          "text": "Bank Fixed Deposit for 1 year tenure at 7.25% p.a. interest, insured under DICGC up to ₹5 lakh.",
+          "is_scam": false,
+          "explanation": "Regulated scheduled commercial bank FD protected by RBI's deposit insurance."
+        }
+      ],
+      "learning_goal": "Trains intuition to quickly filter fraudulent offers and verify SEBI/RBI legitimacy."
+    },
+    {
+      "id": "budget_bazaar",
+      "name": "Budget Bazaar",
+      "tagline": "Balance your monthly budget against unexpected life surprises!",
+      "entry_cost": 15,
+      "reward_coins": 30,
+      "category": "budgeting",
+      "rules": [
+        "Allocate your monthly income across Needs, Wants, and Savings.",
+        "Survive 4 random weekly life events (e.g. bike repair, dental emergency, flash sale).",
+        "Keep your emergency buffer intact without taking high-interest loans."
+      ],
+      "events": [
+        {
+          "week": 1,
+          "title": "Motorbike Breakdown",
+          "description": "Your two-wheeler broke down on the ring road. The mechanic quotes ₹3,500 for replacement parts and towing.",
+          "is_emergency": true,
+          "choices": [
+            { "id": "buffer", "label": "Use Emergency Buffer (₹3,500)", "score": 25, "hint": "Textbook use of emergency savings!" },
+            { "id": "wants", "label": "Cancel this month's dining out and pay from cash", "score": 20, "hint": "Disciplined sacrifice of wants." },
+            { "id": "debt", "label": "Swipe Credit Card with revolving 42% APR", "score": 5, "hint": "High interest debt trap." }
+          ]
+        },
+        {
+          "week": 2,
+          "title": "Friend's Destination Wedding",
+          "description": "Your college roommate is getting married in Goa. Flights, stay and gifts will cost ₹8,000.",
+          "is_emergency": false,
+          "choices": [
+            { "id": "wants", "label": "Set a strict ₹2,500 gift budget and attend reception locally", "score": 25, "hint": "Living within true means without FOMO." },
+            { "id": "buffer", "label": "Drain Emergency Fund to party in Goa", "score": 10, "hint": "Emergency fund is for survival, not vacations." },
+            { "id": "debt", "label": "Take an instant Buy-Now-Pay-Later (BNPL) loan", "score": 0, "hint": "Borrowing for lifestyle ruins future cashflows." }
+          ]
+        },
+        {
+          "week": 3,
+          "title": "Sudden Dental Root Canal",
+          "description": "A severe toothache strikes during exams/work. Dentist says root canal treatment costs ₹4,500 immediately.",
+          "is_emergency": true,
+          "choices": [
+            { "id": "buffer", "label": "Pay from Health Emergency Buffer", "score": 25, "hint": "Health comes first, emergency cushion saves you." },
+            { "id": "wants", "label": "Cut shopping & entertainment to zero this month", "score": 20, "hint": "Tough sacrifice to avoid borrowing." },
+            { "id": "debt", "label": "Pay using high-cost salary advance loan", "score": 5, "hint": "Predatory interest rates compound against you." }
+          ]
+        },
+        {
+          "week": 4,
+          "title": "Mega Festive E-Commerce Sale",
+          "description": "Noise-cancelling headphones you like are at 50% discount (₹7,500 down from ₹15,000). Sale ends in 2 hours!",
+          "is_emergency": false,
+          "choices": [
+            { "id": "wants", "label": "Pass on the sale; add to wishlist for when savings allow", "score": 25, "hint": "Discounting 50% on something you did not plan is still spending 100%!" },
+            { "id": "buffer", "label": "Raid savings because 'it's too good a deal to miss'", "score": 5, "hint": "Impulse purchase breaking financial rules." },
+            { "id": "debt", "label": "Sign up for a 6-month 'No Cost' EMI card scheme", "score": 10, "hint": "EMIs eat up future monthly discretionary cash." }
+          ]
+        }
+      ],
+      "learning_goal": "Teaches how living on a 50/30/20 budget cushions sudden unexpected cash hits."
+    },
+    {
+      "id": "inflation_island",
+      "name": "Inflation Island",
+      "tagline": "Watch the purchasing power of your hidden cash melt away over decades!",
+      "entry_cost": 15,
+      "reward_coins": 30,
+      "category": "inflation",
+      "rules": [
+        "You start in year 2010 with ₹1,00,000 cash under a mattress vs ₹1,00,000 invested in an equity index fund.",
+        "Step forward through years 2015, 2020, and 2025.",
+        "Compare what your money can buy: rent, fuel, college fees, groceries.",
+        "Experience first-hand why idle cash loses the race against inflation."
+      ],
+      "timeline": [
+        {
+          "year": 2010,
+          "milestone": "Starting Point (Year 2010)",
+          "cash_value": 100000,
+          "cash_purchasing_power": 100000,
+          "index_value": 100000,
+          "petrol_price": "₹48 / L",
+          "gold_price": "₹18,500 / 10g",
+          "monthly_rent": "₹6,000",
+          "commentary": "Both cash and index fund start at equal ₹1,00,000 value."
+        },
+        {
+          "year": 2015,
+          "milestone": "5 Years Later (Year 2015)",
+          "cash_value": 100000,
+          "cash_purchasing_power": 73500,
+          "index_value": 182000,
+          "petrol_price": "₹67 / L",
+          "gold_price": "₹26,000 / 10g",
+          "monthly_rent": "₹9,500",
+          "commentary": "Cash feels safe, but 6% inflation has eaten 26.5% of its real purchasing power. The index fund grew 82%."
+        },
+        {
+          "year": 2020,
+          "milestone": "10 Years Later (Year 2020)",
+          "cash_value": 100000,
+          "cash_purchasing_power": 54000,
+          "index_value": 315000,
+          "petrol_price": "₹82 / L",
+          "gold_price": "₹48,000 / 10g",
+          "monthly_rent": "₹15,000",
+          "commentary": "Cash can only buy about half of what it bought in 2010. Index compounding has tripled the investment."
+        },
+        {
+          "year": 2025,
+          "milestone": "15 Years Later (Year 2025)",
+          "cash_value": 100000,
+          "cash_purchasing_power": 38200,
+          "index_value": 547000,
+          "petrol_price": "₹103 / L",
+          "gold_price": "₹78,000 / 10g",
+          "monthly_rent": "₹22,000",
+          "commentary": "Idle cash was crushed by inflation losing 61.8% of purchasing power. The index fund grew by 5.47x!"
+        }
+      ],
+      "learning_goal": "Proves that keeping cash idle in savings accounts loses real wealth to inflation."
+    }
+  ]
+}
+
